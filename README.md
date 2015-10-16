@@ -17,7 +17,7 @@ riemann is configured to aggregate Seastar and Scylla metrics. The naming conven
  * for sharded metrics: `{plugin}-{instance}/{type}-{name}` -> `{plugin}/{type}-{name}`
  * for aggregating metrics from all hosts: `{plugin}/{type}-{name}` -> `{plugin}/{type}-total_{name}`
 
-Not all metrics are being aggregated yet. For the full list see [metrics-server/riemann.config].
+Not all metrics are being aggregated yet. For the full list see [metrics-server/riemann.config](metrics-server/riemann.config).
 
 Examples of aggregated metrics:
  * `reactor/gauge-load` - average load for all shards
@@ -66,9 +66,9 @@ from `metrics-server` is available on local port `80`. Note that the host name
 must be reachable from your browser, not just the machine on which you run
 tessera.
 
-After staring the container, you can navigate to [http://localhost:8081/] in your browser.
+After staring the container, you can navigate to [http://localhost:8081/](http://localhost:8081/) in your browser.
 
-The image is equipped with a pre-configured dashboard for monitoring Scylla: [http://localhost:8081/dashboards/12/scylla].
+The image is equipped with a pre-configured dashboard for monitoring Scylla: [http://localhost:8081/dashboards/12/scylla](http://localhost:8081/dashboards/12/scylla).
 
 For more info on using tessera check [here](http://urbanairship.github.io/tessera/docs/).
 
@@ -80,7 +80,7 @@ To start it, run:
 sudo docker run -d -p 4567:4567 -it scylladb/riemann-dash
 ```
 
-Then navigate to [http://localhost:4567/] in your browser. You will find several pre-configured dashboards there.
+Then navigate to http://localhost:4567/ in your browser. You will find several pre-configured dashboards there.
 
 Note that the GUI by defaulut tries to connect to riemann (from `metrics-server`) on 127.0.0.1:5556. This address must be reachable from your browser.
 
@@ -100,7 +100,7 @@ Tessera graphs are adjusting units on the scale according to the range shown (eg
 
 ## Starting all images at once
 
-To start all containers locally, just run [./start-all.sh].
+To start all containers locally, just run [./start-all.sh](./start-all.sh).
 
 ## Building images
 
