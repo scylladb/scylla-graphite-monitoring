@@ -1,0 +1,205 @@
+{
+  "title": "cassandra",
+  "category": "",
+  "summary": "",
+  "description": "",
+  "tags": [],
+  "definition": {
+    "item_id": "d0",
+    "item_type": "dashboard_definition",
+    "items": [
+      {
+        "horizontal_rule": true,
+        "item_id": "d3",
+        "item_type": "section",
+        "items": [
+          {
+            "item_id": "d4",
+            "item_type": "row",
+            "items": [
+              {
+                "item_id": "d22",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d23",
+                    "item_type": "standard_time_series",
+                    "legend": "simple",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "cassandra.total.pernode",
+                    "title": "Total operations (per node)"
+                  }
+                ],
+                "span": 12
+              },
+              {
+                "item_id": "d5",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d6",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "query": "cassandra.total",
+                    "title": "Total operations"
+                  }
+                ],
+                "span": 12
+              },
+              {
+                "item_id": "d10",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d11",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "query": "cassandra.reads",
+                    "title": "Reads"
+                  }
+                ],
+                "span": 12
+              },
+              {
+                "item_id": "d8",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d9",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "query": "cassandra.writes",
+                    "title": "Writes"
+                  }
+                ],
+                "span": 12
+              }
+            ]
+          }
+        ],
+        "layout": "fixed",
+        "level": 1,
+        "title": "Cassandra"
+      },
+      {
+        "horizontal_rule": true,
+        "item_id": "d13",
+        "item_type": "section",
+        "items": [
+          {
+            "item_id": "d14",
+            "item_type": "row",
+            "items": [
+              {
+                "item_id": "d15",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d16",
+                    "item_type": "standard_time_series",
+                    "legend": "simple",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "memory.cached",
+                    "title": "Memory cached"
+                  }
+                ],
+                "span": 4
+              },
+              {
+                "item_id": "d17",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d18",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "disk.reads",
+                    "title": "Disk reads Bps"
+                  }
+                ],
+                "span": 4
+              },
+              {
+                "item_id": "d19",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d20",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "disk.writes",
+                    "title": "Disk writes Bps"
+                  }
+                ],
+                "span": 4
+              }
+            ]
+          }
+        ],
+        "layout": "fixed",
+        "level": 1
+      }
+    ],
+    "queries": {
+      "cassandra.reads": {
+        "name": "cassandra.reads",
+        "targets": [
+          "summarize(cassandra.total_operations-reads, \"12s\", \"avg\")"
+        ]
+      },
+      "cassandra.total": {
+        "name": "cassandra.total",
+        "targets": [
+          "summarize(cassandra.total_operations-all, \"12s\", \"avg\")"
+        ]
+      },
+      "cassandra.total.pernode": {
+        "name": "cassandra.total.pernode",
+        "targets": [
+          "aliasByNode(summarize(*.*.*.cassandra-0.total_operations-all, \"12s\", \"avg\"), 2)"
+        ]
+      },
+      "cassandra.writes": {
+        "name": "cassandra.writes",
+        "targets": [
+          "summarize(cassandra.total_operations-writes, \"12s\", \"avg\")"
+        ]
+      },
+      "disk.reads": {
+        "name": "disk.reads",
+        "targets": [
+          "aliasByNode(summarize(*.*.*.disk-sda.disk_octets.read, \"10s\", \"avg\"), 2)"
+        ]
+      },
+      "disk.writes": {
+        "name": "disk.writes",
+        "targets": [
+          "aliasByNode(summarize(*.*.*.disk-sda.disk_octets.write, \"10s\", \"avg\"), 2)"
+        ]
+      },
+      "memory.cached": {
+        "name": "memory.cached",
+        "targets": [
+          "aliasByNode(summarize(*.*.*.memory.memory-cached, \"10s\", \"avg\"), 2)"
+        ]
+      }
+    }
+  }
+}

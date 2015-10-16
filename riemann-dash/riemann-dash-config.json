@@ -1,0 +1,1054 @@
+{
+  "server": "127.0.0.1:5556",
+  "server_type": "ws",
+  "workspaces": [
+    {
+      "name": "CQL connections",
+      "view": {
+        "type": "Balloon",
+        "weight": 1,
+        "id": "7cd7ef42681c9e3963b7b0cf7de7145e3ee8179d",
+        "version": 86,
+        "child": {
+          "type": "VStack",
+          "weight": 1,
+          "id": "a25d57cce29348c23cb54da27a7bff90bfd0d4e7",
+          "version": 86,
+          "children": [
+            {
+              "type": "HStack",
+              "weight": 1,
+              "id": "8027002e5e3eef2d350f294c8de30f4ea3cbebb8",
+              "version": 86,
+              "children": [
+                {
+                  "type": "VStack",
+                  "weight": 1,
+                  "id": "ec796c8ca29909793dc373905739122211d60b6f",
+                  "version": 17,
+                  "children": [
+                    {
+                      "type": "HStack",
+                      "weight": 4,
+                      "id": "b43017afeab7837ad7bb6a834159e0dd632f483d",
+                      "version": 5,
+                      "children": [
+                        {
+                          "type": "Grid",
+                          "weight": 0.25,
+                          "id": "c6136673f93dd2034320890cd08b303925f02af0",
+                          "version": 13,
+                          "title": "",
+                          "query": "service =~ \"reactor%/%load\"",
+                          "max": "100",
+                          "rows": "service",
+                          "cols": "host",
+                          "row_sort": "lexical",
+                          "col_sort": "lexical"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "1c84d7e85e44f2ed77a371a1ccfc759e8db62687",
+                      "version": 8,
+                      "title": "",
+                      "query": "service =~ \"transport/total_requests-total_requests_served\"",
+                      "min": "700000",
+                      "max": "1500000",
+                      "timeRange": 300,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    }
+                  ]
+                },
+                {
+                  "type": "VStack",
+                  "weight": 1,
+                  "id": "51d9c7b079e4c58979a07377110ce0df4e21d799",
+                  "version": 28,
+                  "children": [
+                    {
+                      "type": "Grid",
+                      "weight": 0.03125,
+                      "id": "1249cc7c84f52ea75d77092ad60e980264fdc130",
+                      "version": 13,
+                      "title": "",
+                      "query": "service =~ \"transport%/total_requests-requests_served\"",
+                      "max": "",
+                      "rows": "service",
+                      "cols": "host",
+                      "row_sort": "lexical",
+                      "col_sort": "lexical"
+                    },
+                    {
+                      "type": "Grid",
+                      "weight": 0.00390625,
+                      "id": "21eece92b68246c41efd104e4b338dd64c9ee723",
+                      "version": 9,
+                      "title": "",
+                      "query": "service = \"transport/total_requests_served\"",
+                      "max": "",
+                      "rows": "",
+                      "cols": "",
+                      "row_sort": "lexical",
+                      "col_sort": "lexical"
+                    }
+                  ]
+                },
+                {
+                  "type": "VStack",
+                  "weight": 1,
+                  "id": "9f1ce08a0004da1ef30a255a928387e226dd5bdc",
+                  "version": 7,
+                  "children": [
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "f40745dca6a5505f71e90c061faef18b58ef7789",
+                      "version": 2,
+                      "children": [
+                        {
+                          "type": "Grid",
+                          "weight": 1,
+                          "id": "ff26bcec794e3acec579441a94680fb6bbc78736",
+                          "version": 7,
+                          "title": "",
+                          "query": "service =~ \"transport%/current_connections-current\" ",
+                          "max": "",
+                          "rows": "service",
+                          "cols": "host",
+                          "row_sort": "lexical",
+                          "col_sort": "lexical"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Grid",
+                      "weight": 0.125,
+                      "id": "abd46b694a594866eb41258154f3819069941e74",
+                      "version": 4,
+                      "title": "",
+                      "query": "service = \"transport/total_current\"",
+                      "max": "",
+                      "rows": "",
+                      "cols": "",
+                      "row_sort": "lexical",
+                      "col_sort": "lexical"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "id": "5a7ef45d670bab641c1d631c4933061033b5e783"
+    },
+    {
+      "name": "dpdk",
+      "view": {
+        "type": "Balloon",
+        "weight": 1,
+        "id": "d665b5483075d62f8292cddc1e18d6c86ea487c0",
+        "version": 7,
+        "child": {
+          "type": "VStack",
+          "weight": 1,
+          "id": "dc507c29356a3c3dd0d47653eb42021ea691b0bf",
+          "version": 7,
+          "children": [
+            {
+              "type": "HStack",
+              "weight": 1,
+              "id": "4ca39724e03270d9c0d68eccb3bf0004be26f4c9",
+              "version": 6,
+              "children": [
+                {
+                  "type": "Grid",
+                  "weight": 2,
+                  "id": "77dd76821de7bb32c923214a970e9ef5210aae32",
+                  "version": 2,
+                  "title": "",
+                  "query": "service =~ \"%idle\"",
+                  "max": "",
+                  "rows": "service",
+                  "cols": "host",
+                  "row_sort": "lexical",
+                  "col_sort": "lexical"
+                },
+                {
+                  "type": "Grid",
+                  "weight": 2,
+                  "id": "e12c6fa86f217f95789f1223373275de89e64acf",
+                  "version": 3,
+                  "title": "",
+                  "query": "service =~ \"network%if_packets%rx\"",
+                  "max": "",
+                  "rows": "service",
+                  "cols": "host",
+                  "row_sort": "lexical",
+                  "col_sort": "lexical"
+                },
+                {
+                  "type": "Grid",
+                  "weight": 2,
+                  "id": "c3225359edd6e3b4b778737747b5baaba222ba8d",
+                  "version": 2,
+                  "title": "",
+                  "query": "service =~ \"network%if_packets%tx\"",
+                  "max": "",
+                  "rows": "service",
+                  "cols": "host",
+                  "row_sort": "lexical",
+                  "col_sort": "lexical"
+                },
+                {
+                  "type": "View",
+                  "weight": 1,
+                  "id": "42622873630c884081cab4879446c891b40af1a9",
+                  "version": 0
+                },
+                {
+                  "type": "View",
+                  "weight": 1,
+                  "id": "0d6da893549dbeedfff27480cb2f2ba2c66dbf48",
+                  "version": 0
+                },
+                {
+                  "type": "View",
+                  "weight": 1,
+                  "id": "1a6758d09f829d7e912c1842bb20de252259fe43",
+                  "version": 0
+                },
+                {
+                  "type": "View",
+                  "weight": 1,
+                  "id": "46c2b321ff597d9351b721bffc8be949b73fa48f",
+                  "version": 0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "id": "72c1c68e45c53da50f362bbfb0f29ae9b627a849"
+    },
+    {
+      "name": "throughput",
+      "view": {
+        "type": "Balloon",
+        "weight": 1,
+        "id": "e22867639ecd5ab0ec0ff71db3c9dee4255559ac",
+        "version": 68,
+        "child": {
+          "type": "VStack",
+          "weight": 1,
+          "id": "3e1fcfca97d283cc913ad0d242e424e6fe795bc2",
+          "version": 68,
+          "children": [
+            {
+              "type": "HStack",
+              "weight": 1,
+              "id": "a11b94ab9ce259b017b169f55707fc48a7363b60",
+              "version": 68,
+              "children": [
+                {
+                  "type": "VStack",
+                  "weight": 1,
+                  "id": "a7433d5b5783f1e62bf871a86d22236ae9d7bb34",
+                  "version": 65,
+                  "children": [
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "26e5c6648c4cb61d7f31d14d5c43acfda3c28d24",
+                      "version": 9,
+                      "children": [
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "f52ab2a12273b1c9256492c304d8fd5f46c35c2c",
+                          "version": 9,
+                          "title": "CQL requests per second",
+                          "query": "service = \"transport/total_requests-total_requests_served\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "ead2b4df4536cf381098f7dcb2d75733fa1b4ade",
+                          "version": 2,
+                          "title": "load",
+                          "query": "service =~ \"reactor/gauge-load\"",
+                          "min": "0",
+                          "max": "100",
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "b4da19778ace10769819367d119fd5d3cc420c02",
+                          "version": 3,
+                          "title": "non-lsa",
+                          "query": "service = \"lsa/bytes-non_lsa_used_space\"\r\n",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "a2191c9e719cf6b1f199907e0633c4d44cd084f2",
+                      "version": 9,
+                      "children": [
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "eaa5f5b75cc62789b02637988054566a261f0304",
+                          "version": 5,
+                          "title": "disk octets written",
+                          "query": "service =~ \"disk-%da/%octet%/write\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "6725461c18921de32dcbbdb13672afa38e469307",
+                          "version": 3,
+                          "title": "disk octets read",
+                          "query": "service =~ \"disk-%da/%octet%/read\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "2587d56a98b01855aadfdc084633707d3957aae2",
+                          "version": 3,
+                          "title": "lsa",
+                          "query": "service = \"lsa/bytes-total_space\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "3379da0e871eb98bcb2f2366202a2f4f6a8b0808",
+                      "version": 10,
+                      "children": [
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "d6fe93ed2f7e8cda690fb27395e6b9084b4380d9",
+                          "version": 15,
+                          "title": "disk write ops",
+                          "query": "service =~ \"disk-%da/disk_ops%write\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "04957a478a62a0c24f2d5f65a3921b4e0260311a",
+                          "version": 4,
+                          "title": "disk read ops",
+                          "query": "service =~ \"disk-%da/disk_ops%/read\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "View",
+                          "weight": 1,
+                          "id": "a21bbf7f2f591d067c7d1833b75bb6ab724ddfed",
+                          "version": 0
+                        }
+                      ]
+                    },
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "40d5be802c5f064cc3eab04d6fa37c2117f99a63",
+                      "version": 10,
+                      "children": [
+                        {
+                          "type": "Grid",
+                          "weight": 1,
+                          "id": "c5e54adf6cca5344217d2697833d934f43b1ec4f",
+                          "version": 7,
+                          "title": "",
+                          "query": "service = \"lsa/bytes-total_space\" or\r\nservice = \"cache/bytes-total\" or\r\nservice = \"lsa/bytes-non_lsa_used_space\" or\r\nservice = \"transport/total_requests_served\"",
+                          "max": "",
+                          "rows": "service",
+                          "cols": "host",
+                          "row_sort": "lexical",
+                          "col_sort": "lexical"
+                        },
+                        {
+                          "type": "View",
+                          "weight": 1,
+                          "id": "d77f442e352dc76d13d89bee0abbd24a861e289a",
+                          "version": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "id": "6148b3c572ca3b096422bf6b236f4f1fbd9a7a1e"
+    },
+    {
+      "name": "cache",
+      "view": {
+        "type": "Balloon",
+        "weight": 1,
+        "id": "97d70eabe90e33217c3d57b75c4c0c0e2b0b953c",
+        "version": 68,
+        "child": {
+          "type": "VStack",
+          "weight": 1,
+          "id": "8eafd8c21cc96793f443e800e7b14d944dd5a94e",
+          "version": 68,
+          "children": [
+            {
+              "type": "HStack",
+              "weight": 1,
+              "id": "cfad6300749fedd8c5e9594259a85c2968a53064",
+              "version": 68,
+              "children": [
+                {
+                  "type": "VStack",
+                  "weight": 1,
+                  "id": "0aab94e00a21ebd5265fbb24e47d2192717ee55e",
+                  "version": 28,
+                  "children": [
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "a18b1514e090bc980abc8de6a835c3feeeda99c4",
+                      "version": 6,
+                      "title": "",
+                      "query": "service =~ \"cache/bytes%\"\r\nor service =~ \"lsa/bytes-total_space\"",
+                      "min": "0",
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "afae0939450b6582c66e9777dcb36f3d5ed2db55",
+                      "version": 2,
+                      "title": "",
+                      "query": "service = \"reactor/gauge-load\"",
+                      "min": "0",
+                      "max": "100",
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "4d02d521923e080c7dedb8f65cbae87dced4ee39",
+                      "version": 8,
+                      "title": "",
+                      "query": "service =~ \"cache/total_operations-hits\" \r\nor service =~ \"cache/total_operations-misses\"\r\n",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "c23d59b92b3eae7d448dc2df30555ea5a70e399a",
+                      "version": 4,
+                      "title": "",
+                      "query": "service = \"cache/total_operations-insertions\" or\r\nservice = \"cache/total_operations-merges\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "true"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "6c18d759395ac0d2234e50f3f07834e12f1338dd",
+                      "version": 3,
+                      "title": "",
+                      "query": "service =~ \"lsa/bytes-total_space\" or \r\nservice =~ \"lsa/bytes-non_lsa_used_space\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "true"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "c495cc435d7bcb876661facc8de9f148781dbed6",
+                      "version": 5,
+                      "title": "",
+                      "query": "service =~ \"transport/total_requests-total_requests_served\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "true"
+                    }
+                  ]
+                },
+                {
+                  "type": "VStack",
+                  "weight": 1,
+                  "id": "b9ff308970ce9233a2132843bd32482ebf7c6832",
+                  "version": 21,
+                  "children": [
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "e308aef074b6c8e7c4ab6de0c9f483115fc45353",
+                      "version": 4,
+                      "title": "",
+                      "query": "service =~ \"disk-sda/disk_octets%\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "3940954b83e50e0b91500036f4349ed634b66074",
+                      "version": 2,
+                      "title": "",
+                      "query": "service =~ \"disk-sda/%ops%\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "2c85fc23fc82f9ffab55669a07b99eae9f5e9d12",
+                      "version": 3,
+                      "title": "",
+                      "query": "service =~ \"interface-int0/%packets%\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 600,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "ff711723517381863e1244ac901a465c18d505d4",
+                      "version": 3,
+                      "title": "",
+                      "query": "service =~ \"interface-int0/%octets%\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 600,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "92a2bd5515f0764a947e47a3751ec4ed96f22d43",
+                      "version": 4,
+                      "title": "",
+                      "query": "service = \"cache/objects-partitions\"",
+                      "min": "0",
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    }
+                  ]
+                },
+                {
+                  "type": "VStack",
+                  "weight": 1,
+                  "id": "c1fe125cd110f327f4e2c347a0e06d8fcb48a0a4",
+                  "version": 18,
+                  "children": [
+                    {
+                      "type": "View",
+                      "weight": 1,
+                      "id": "2baaef7501b0291c1b24a21aa61a4bf420cfd418",
+                      "version": 0
+                    },
+                    {
+                      "type": "Flot",
+                      "weight": 1,
+                      "id": "1b6b4e39e4f7713f571ebabfecc726f6a6cc3ce2",
+                      "version": 4,
+                      "title": "",
+                      "query": "service =~ \"sstable/%\"",
+                      "min": null,
+                      "max": null,
+                      "timeRange": 1300,
+                      "graphType": "line",
+                      "stackMode": "false"
+                    },
+                    {
+                      "type": "View",
+                      "weight": 1,
+                      "id": "9fd455da1a3a7c4223002987c7c3660bbe17ddd3",
+                      "version": 0
+                    },
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "e26b86b8d1defaaa068ac5489c671d3138bb4652",
+                      "version": 5,
+                      "children": [
+                        {
+                          "type": "VStack",
+                          "weight": 1,
+                          "id": "9db4a8de824a4d50215daebbf3e39658e7141305",
+                          "version": 5,
+                          "children": [
+                            {
+                              "type": "View",
+                              "weight": 1,
+                              "id": "5fe1d0586ad5a77bf4dabaaf86dc7804eabd9aa7",
+                              "version": 0
+                            },
+                            {
+                              "type": "Grid",
+                              "weight": 1,
+                              "id": "ab9e85521e664c3720e32093bb9ef5b5aa21e3e4",
+                              "version": 1,
+                              "title": "",
+                              "query": "service = \"transport/total_requests_served\"",
+                              "max": "",
+                              "rows": "",
+                              "cols": "",
+                              "row_sort": "lexical",
+                              "col_sort": "lexical"
+                            },
+                            {
+                              "type": "Grid",
+                              "weight": 1,
+                              "id": "d8c7befb21250765955b4e042086ca7206e54bb2",
+                              "version": 1,
+                              "title": "",
+                              "query": "service = \"cache/partitions\"",
+                              "max": "",
+                              "rows": "",
+                              "cols": "",
+                              "row_sort": "lexical",
+                              "col_sort": "lexical"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "id": "b54b8925dd4c9386622b17aa6db47a87d4f8f2e6"
+    },
+    {
+      "name": "cassandra",
+      "view": {
+        "type": "Balloon",
+        "weight": 1,
+        "id": "67c152818a3a87e56f7a80ace71f087e78b58ac9",
+        "version": 66,
+        "child": {
+          "type": "VStack",
+          "weight": 1,
+          "id": "9826d70a72caf9bf494e6d99e36509effb245323",
+          "version": 66,
+          "children": [
+            {
+              "type": "HStack",
+              "weight": 1,
+              "id": "167025af01f3dfbfd9b6e67393422977d7b7240a",
+              "version": 66,
+              "children": [
+                {
+                  "type": "VStack",
+                  "weight": 1,
+                  "id": "efa13c66760b3c097dbc09f8f4e04bcfcee0c121",
+                  "version": 66,
+                  "children": [
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "0e50a43aaca37ab4ac067405009fcccde7e379b3",
+                      "version": 33,
+                      "children": [
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "3c46787a177dae9893c832885d1024cc43e84873",
+                          "version": 14,
+                          "title": "",
+                          "query": "service =~ \"%cassandra%\"\r\n",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 800,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "View",
+                          "weight": 1,
+                          "id": "266dc1a3020ebf3874f6a273391d975828cc2ca6",
+                          "version": 0
+                        },
+                        {
+                          "type": "VStack",
+                          "weight": 1,
+                          "id": "a9bc76115e79389aae137c23898f541fe2223cdc",
+                          "version": 14,
+                          "children": [
+                            {
+                              "type": "HStack",
+                              "weight": 1,
+                              "id": "e5da679747d221ea5a91c6debdd988ef85d08651",
+                              "version": 14,
+                              "children": [
+                                {
+                                  "type": "VStack",
+                                  "weight": 1,
+                                  "id": "a50f2e4d0167fcbd13fff9693313d3738b037e1b",
+                                  "version": 13,
+                                  "children": [
+                                    {
+                                      "type": "HStack",
+                                      "weight": 1,
+                                      "id": "b2ca4ee48cee1f73748a7bc718bc76e14059dc63",
+                                      "version": 13,
+                                      "children": [
+                                        {
+                                          "type": "VStack",
+                                          "weight": 1,
+                                          "id": "c3cf264437c5fb0d98436e80bb4ee70f5055f071",
+                                          "version": 13,
+                                          "children": [
+                                            {
+                                              "type": "Gauge",
+                                              "weight": 1,
+                                              "id": "e90a98b06688eb08add8b91ac307bf8977089341",
+                                              "version": 2,
+                                              "title": "cached",
+                                              "query": "service = \"memory/memory-cached\"",
+                                              "commaSeparateThousands": "on"
+                                            },
+                                            {
+                                              "type": "Gauge",
+                                              "weight": 1,
+                                              "id": "9dd63c1f608bfedeb5b3d5486d7faa8e1bd94194",
+                                              "version": 1,
+                                              "title": "read_ops",
+                                              "query": "service = \"disk-sda/disk_ops/read\"",
+                                              "commaSeparateThousands": "on"
+                                            },
+                                            {
+                                              "type": "Gauge",
+                                              "weight": 1,
+                                              "id": "fddcc482f4d8c0bf2bd19f4b60f5bfaebc3b5b09",
+                                              "version": 3,
+                                              "title": "cassandra total ops",
+                                              "query": "service = \"cassandra/total_operations-all\"",
+                                              "commaSeparateThousands": "on"
+                                            },
+                                            {
+                                              "type": "Gauge",
+                                              "weight": 1,
+                                              "id": "2993ad93eb4319d44324957069d3a7d8618f0a9c",
+                                              "version": 1,
+                                              "title": "read_octets",
+                                              "query": "service = \"disk-sda/disk_octets/read\"",
+                                              "commaSeparateThousands": "on"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "99c4dbdc7c1cef1842916577bc1cebc0fb8dd4fd",
+                      "version": 16,
+                      "children": [
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "7e1fb0544a804b8417c6f5f892880c88701700ea",
+                          "version": 10,
+                          "title": "disk octets read",
+                          "query": "service =~ \"disk-sda/disk_octets%read\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 800,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "2fb884205b297bae562341866adfd93b412362a9",
+                          "version": 2,
+                          "title": "disk octets written",
+                          "query": "service =~ \"disk-sda/disk_octets%write\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 800,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "aac937dd54c946a6db6db115eb30009fca274aac",
+                          "version": 3,
+                          "title": "memory cached",
+                          "query": "service =~ \"memory/memory-cached\"",
+                          "min": null,
+                          "max": null,
+                          "timeRange": 800,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "HStack",
+                      "weight": 1,
+                      "id": "525a82d8d9af8688285d2ac550a801500de1710f",
+                      "version": 13,
+                      "children": [
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "d17b40404814238253c36e152eba4e6a8720404d",
+                          "version": 6,
+                          "title": "disk read ops",
+                          "query": "service =~ \"disk-sda/disk_ops%/read\"\r\n",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 800,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "6d6e169a71010dc4e09809030dc1ed8921216a7a",
+                          "version": 3,
+                          "title": "disk write ops",
+                          "query": "service =~ \"disk-sda/disk_ops%write\"",
+                          "min": "0",
+                          "max": null,
+                          "timeRange": 800,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "VStack",
+                          "weight": 1,
+                          "id": "4cd9bd9ef37eaf15085826f77c3e191ca2d19a46",
+                          "version": 0,
+                          "children": [
+                            {
+                              "type": "View",
+                              "weight": 1,
+                              "id": "5fa6939c5dae4c9d594c8809a891104533d42ee4",
+                              "version": 0
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "id": "caa59a113715e2976d20372daec14feb8d09ab17"
+    },
+    {
+      "name": "local traffic",
+      "view": {
+        "type": "Balloon",
+        "weight": 1,
+        "id": "0aa5b4cab9b1dfba356f9f1534ed2695f9eb9d06",
+        "version": 1,
+        "child": {
+          "type": "VStack",
+          "weight": 1,
+          "id": "b30cae2f31011ff77d94dfa1e521c3ceebe4854a",
+          "version": 1,
+          "children": [
+            {
+              "type": "Grid",
+              "weight": 1,
+              "id": "adb2f8d1b6697d9d284e1ccaa29dac7f47f90cb4",
+              "version": 1,
+              "title": "",
+              "query": "service =~ \"interface%lo%packets%\" or service =~ \"netlink%lo%drop%\" or service =~ \"netlink%lo%octets%\"",
+              "max": "",
+              "rows": "",
+              "cols": "",
+              "row_sort": "lexical",
+              "col_sort": "lexical"
+            }
+          ]
+        }
+      },
+      "id": "5a570cd26c6a25785e4daef9a1cc3c6555ef7106"
+    },
+    {
+      "name": "system",
+      "view": {
+        "type": "Balloon",
+        "weight": 1,
+        "id": "448d1f7a7a72278be161e998004d0c699a0763f5",
+        "version": 19,
+        "child": {
+          "type": "VStack",
+          "weight": 1,
+          "id": "6e6aa685ddbe174782b24b2f73441a8aab260709",
+          "version": 19,
+          "children": [
+            {
+              "type": "HStack",
+              "weight": 1,
+              "id": "7e6e7b39af469cafaf5d2faa0aa3201555877cc6",
+              "version": 17,
+              "children": [
+                {
+                  "type": "Grid",
+                  "weight": 1,
+                  "id": "7ed45f1f3968e27f6e8f67cc7b413c23c73e8054",
+                  "version": 8,
+                  "title": "wait",
+                  "query": "service =~ \"cpu%wait%\"",
+                  "max": "100",
+                  "rows": "service",
+                  "cols": "host",
+                  "row_sort": "metric",
+                  "col_sort": "lexical"
+                },
+                {
+                  "type": "Grid",
+                  "weight": 1,
+                  "id": "04b35b75f408f8a6892f18b850726575dc0bf61f",
+                  "version": 4,
+                  "title": "softirq",
+                  "query": "service =~ \"%softirq%\"",
+                  "max": "100",
+                  "rows": "service",
+                  "cols": "host",
+                  "row_sort": "metric",
+                  "col_sort": "lexical"
+                },
+                {
+                  "type": "Grid",
+                  "weight": 1,
+                  "id": "a618432bd0c95ad1a897f88c094a877e5bcb93dc",
+                  "version": 2,
+                  "title": "idle",
+                  "query": "service =~ \"cpu%idle%\"",
+                  "max": "100",
+                  "rows": "service",
+                  "cols": "host",
+                  "row_sort": "metric",
+                  "col_sort": "lexical"
+                },
+                {
+                  "type": "Grid",
+                  "weight": 1,
+                  "id": "f2f06b0c250a5d08537833174e22b5c1e1f944c6",
+                  "version": 1,
+                  "title": "system",
+                  "query": "service =~ \"cpu%system%\"",
+                  "max": "100",
+                  "rows": "service",
+                  "cols": "host",
+                  "row_sort": "lexical",
+                  "col_sort": "lexical"
+                },
+                {
+                  "type": "Grid",
+                  "weight": 1,
+                  "id": "dc69e558146941fd9ae98af1a423a9915ce3d44d",
+                  "version": 4,
+                  "title": "interrupt",
+                  "query": "service =~ \"cpu%interrupt%\"",
+                  "max": "100",
+                  "rows": "service",
+                  "cols": "host",
+                  "row_sort": "lexical",
+                  "col_sort": "lexical"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "id": "ba2b942a4542e2e40bf1018b0d9994786c334426"
+    }
+  ]
+}
