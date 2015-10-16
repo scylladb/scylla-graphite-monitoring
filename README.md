@@ -38,7 +38,7 @@ sudo docker run -d \
 The following ports are exposed:
 
  port | service
- ==== | =====
+ ---- | ----
  5556/tcp | riemann
  25826/udp | collectd
  80/tcp | graphite web GUI
