@@ -80,9 +80,9 @@ To start it, run:
 sudo docker run -d -p 4567:4567 -it scylladb/riemann-dash
 ```
 
-Then navigate to http://localhost:4567/ in your browser. You will find several pre-configured dashboards there.
+Then navigate to [http://localhost:4567/](http://localhost:4567/) in your browser. You will find several pre-configured dashboards there.
 
-Note that the GUI by defaulut tries to connect to riemann (from `metrics-server`) on 127.0.0.1:5556. This address must be reachable from your browser.
+Note that the GUI by defaulut tries to connect to riemann (from `metrics-server`) on `127.0.0.1:5556`. This address must be reachable from your browser.
 
 For more information on riemann-dashboard check [here](http://riemann.io/dashboard.html).
 
