@@ -3,29 +3,11 @@
 The monitoring infrastructure consists of several components, wrapped in docker containers:
  * `metrics-server` - collects and stores metrics
  * `tessera` - dashboard server ([project page](https://github.com/urbanairship/tessera)), connecting to graphite server inside `metrics-server`
- * `riemann-dash` - dashboard server, connecting to riemann inside `metrics-server`
+ * `riemann-dash` - dashboard server ([project page](http://riemann.io/dashboard.html)), connecting to riemann inside `metrics-server`
 
 ## Metrics server
 
-The `metrics-server` image contains collectd, riemann and graphite. The data flow looks like this:
-
-```
-   -> collectd -> riemann -> graphite
-```
-
-riemann is configured to aggregate Seastar and Scylla metrics. The naming convention for aggregated metrics is:
- * for sharded metrics: `{plugin}-{instance}/{type}-{name}` -> `{plugin}/{type}-{name}`
- * for aggregating metrics from all hosts: `{plugin}/{type}-{name}` -> `{plugin}/{type}-total_{name}`
-
-Not all metrics are being aggregated yet. For the full list see [metrics-server/riemann.config](metrics-server/riemann.config).
-
-Examples of aggregated metrics:
- * `reactor/gauge-load` - average load for all shards
- * `transport/total_requests-requests_served` - requests_served summed up from all shards
- 
-The metrics are stored by graphite inside carbon and retained for 1 hour with 1 second precision. 
-
-To start `metrics-server` container, run:
+To start the container, run:
 
 ```
 sudo docker run -d \
@@ -49,6 +31,24 @@ You can enable Scylla to write metrics to it using command line arguments like t
 scylla --collectd=1 --collectd-address=127.0.0.1:25826
 
 ```
+
+The data flow between components is as follows:
+
+```
+   -> collectd -> riemann -> graphite
+```
+
+riemann is configured to aggregate Seastar and Scylla metrics. The naming convention for aggregated metrics is:
+ * for sharded metrics: `{plugin}-{instance}/{type}-{name}` -> `{plugin}/{type}-{name}`
+ * for aggregating metrics from all hosts: `{plugin}/{type}-{name}` -> `{plugin}/{type}-total_{name}`
+
+Not all metrics are being aggregated yet. For the full list see [metrics-server/riemann.config](metrics-server/riemann.config).
+
+Examples of aggregated metrics:
+ * `reactor/gauge-load` - average load for all shards
+ * `transport/total_requests-requests_served` - requests_served summed up from all shards
+
+Metrics are stored by graphite inside carbon and retained for 1 hour with 1 second precision.
 
 # Tessera dashboard
 
@@ -82,7 +82,7 @@ sudo docker run -d -p 4567:4567 -it scylladb/riemann-dash
 
 Then navigate to [http://localhost:4567/](http://localhost:4567/) in your browser. You will find several pre-configured dashboards there.
 
-Note that the GUI by defaulut tries to connect to riemann (from `metrics-server`) on `127.0.0.1:5556`. This address must be reachable from your browser.
+Note that the GUI by default tries to connect to riemann (from `metrics-server`) on `127.0.0.1:5556`. This address must be reachable from your browser.
 
 For more information on riemann-dashboard check [here](http://riemann.io/dashboard.html).
 
@@ -92,7 +92,7 @@ Each dashboard has some strong and weak points. Here are some hints on which one
 
 Tessera connects to graphite to get data, so it's able to show historical data. Riemann dashboard works on current event stream, so it will show only data it received since the dashboard was switched on.
 
-Tessera updates graphs every minute by default. The period can be lowered to 30 seconds, but not less. Riemann dashboard updates graphs every second, so it's better for ad-hoc real-time monitoring.
+Tessera updates graphs every minute by default. The period can be lowered to 30 seconds, but not less. Riemann dashboard updates graphs every second, so it's more convenient for ad-hoc monitoring in real-time.
 
 Tessera dashboards are interactive, you can hover over the graph and get precise metric values for given time point. You can't do that in riemann-dash.
 
