@@ -5,6 +5,8 @@ The monitoring infrastructure consists of several components, wrapped in docker 
  * `tessera` - dashboard server ([project page](https://github.com/urbanairship/tessera)), connecting to graphite server inside `metrics-server`
  * `riemann-dash` - dashboard server ([project page](http://riemann.io/dashboard.html)), connecting to riemann inside `metrics-server`
 
+You can but don't have to start all dashboards, you can pick the one you prefer.
+
 ## Metrics server
 
 To start the container, run:
@@ -61,7 +63,7 @@ sudo docker run -d \
     -it scylladb/tessera
 ```
 
-The command above, when setting GRAPHITE_URL, assumes that the graphite web
+The command above, when setting GRAPHITE_URL, assumes that the graphite web server
 from `metrics-server` is available on local port `80`. Note that the host name
 must be reachable from your browser, not just the machine on which you run
 tessera.
@@ -107,5 +109,5 @@ To start all containers locally, just run [./start-all.sh](./start-all.sh).
 To build docker images run:
 
 ```
-make all
+make
 ```
