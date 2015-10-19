@@ -444,19 +444,19 @@
       "cpu.softirq.max": {
         "name": "cpu.softirq.max",
         "targets": [
-          "groupByNode(summarize(*.*.*.cpu-*.cpu-softirq, \"10s\", \"maxSeries\"),  2, \"maxSeries\")"
+          "groupByNode(summarize(*.cpu-*.cpu-softirq, \"10s\", \"maxSeries\"),  2, \"maxSeries\")"
         ]
       },
       "cpu.system.max": {
         "name": "cpu.system.max",
         "targets": [
-          "groupByNode(summarize(*.*.*.cpu-*.cpu-system, \"10s\", \"maxSeries\"),  2, \"maxSeries\")"
+          "groupByNode(summarize(*.cpu-*.cpu-system, \"10s\", \"maxSeries\"),  2, \"maxSeries\")"
         ]
       },
       "cpu.wait.max": {
         "name": "cpu.wait.max",
         "targets": [
-          "groupByNode(summarize(*.*.*.cpu-*.cpu-wait, \"10s\", \"maxSeries\"),  2, \"maxSeries\")"
+          "groupByNode(summarize(*.cpu-*.cpu-wait, \"10s\", \"maxSeries\"),  2, \"maxSeries\")"
         ]
       },
       "cql.requests": {
@@ -474,31 +474,31 @@
       "disk.read.bps": {
         "name": "disk.read.bps",
         "targets": [
-          "aliasByNode(summarize(*.*.*.disk-sda.disk_octets.read, \"10s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.disk-sda.disk_octets.read, \"10s\", \"avg\"), 0)"
         ]
       },
       "disk.reads.iops": {
         "name": "disk.reads.iops",
         "targets": [
-          "aliasByNode(summarize(*.*.*.disk-sda.disk_ops.read, \"10s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.disk-sda.disk_ops.read, \"10s\", \"avg\"), 0)"
         ]
       },
       "disk.write.bps": {
         "name": "disk.write.bps",
         "targets": [
-          "aliasByNode(summarize(*.*.*.disk-sda.disk_octets.write, \"10s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.disk-sda.disk_octets.write, \"10s\", \"avg\"), 0)"
         ]
       },
       "disk.writes.iops": {
         "name": "disk.writes.iops",
         "targets": [
-          "aliasByNode(summarize(*.*.*.disk-sda.disk_ops.write, \"10s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.disk-sda.disk_ops.write, \"10s\", \"avg\"), 0)"
         ]
       },
       "irq": {
         "name": "irq",
         "targets": [
-          "*.*.*.irq.*"
+          "*.irq.*"
         ]
       },
       "load": {
@@ -516,25 +516,25 @@
       "netlink.octets.rx": {
         "name": "netlink.octets.rx",
         "targets": [
-          "aliasByNode(summarize(*.*.*.netlink-int0.if_octets.rx, \"12s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.netlink-int0.if_octets.rx, \"12s\", \"avg\"), 0)"
         ]
       },
       "netlink.octets.tx": {
         "name": "netlink.octets.tx",
         "targets": [
-          "aliasByNode(summarize(*.*.*.netlink-int0.if_octets.tx, \"12s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.netlink-int0.if_octets.tx, \"12s\", \"avg\"), 0)"
         ]
       },
       "netlink.packets.rx": {
         "name": "netlink.packets.rx",
         "targets": [
-          "aliasByNode(summarize(*.*.*.netlink-int0.if_packets.rx, \"12s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.netlink-int0.if_packets.rx, \"12s\", \"avg\"), 0)"
         ]
       },
       "netlink.packets.tx": {
         "name": "netlink.packets.tx",
         "targets": [
-          "aliasByNode(summarize(*.*.*.netlink-int0.if_packets.tx, \"12s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.netlink-int0.if_packets.tx, \"12s\", \"avg\"), 0)"
         ]
       },
       "non-lsa.total": {

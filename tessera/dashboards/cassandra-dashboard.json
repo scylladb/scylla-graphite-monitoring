@@ -173,7 +173,7 @@
       "cassandra.total.pernode": {
         "name": "cassandra.total.pernode",
         "targets": [
-          "aliasByNode(summarize(*.*.*.cassandra-0.total_operations-all, \"12s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.cassandra-0.total_operations-all, \"12s\", \"avg\"), 0)"
         ]
       },
       "cassandra.writes": {
@@ -185,19 +185,19 @@
       "disk.reads": {
         "name": "disk.reads",
         "targets": [
-          "aliasByNode(summarize(*.*.*.disk-sda.disk_octets.read, \"10s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.disk-sda.disk_octets.read, \"10s\", \"avg\"), 0)"
         ]
       },
       "disk.writes": {
         "name": "disk.writes",
         "targets": [
-          "aliasByNode(summarize(*.*.*.disk-sda.disk_octets.write, \"10s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.disk-sda.disk_octets.write, \"10s\", \"avg\"), 0)"
         ]
       },
       "memory.cached": {
         "name": "memory.cached",
         "targets": [
-          "aliasByNode(summarize(*.*.*.memory.memory-cached, \"10s\", \"avg\"), 2)"
+          "aliasByNode(summarize(*.memory.memory-cached, \"10s\", \"avg\"), 0)"
         ]
       }
     }
