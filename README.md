@@ -16,7 +16,7 @@ sudo docker run -d \
 	-p 5556:5556 \
 	-p 25826:25826/udp \
 	-p 80:80 \
-	-it scylladb/metrics-server
+	-it scylladb/scylla-monitoring:metrics-server
 ```
 
 The following ports are exposed:
@@ -60,7 +60,7 @@ To start it, run:
 sudo docker run -d \
     -p 8081:80 \
     -e GRAPHITE_URL=http://127.0.0.1:80 \
-    -it scylladb/tessera
+    -it scylladb/scylla-monitoring:tessera
 ```
 
 The command above, when setting GRAPHITE_URL, assumes that the graphite web server
@@ -79,7 +79,7 @@ For more info on using tessera check [here](http://urbanairship.github.io/tesser
 To start it, run:
 
 ```
-sudo docker run -d -p 4567:4567 -it scylladb/riemann-dash
+sudo docker run -d -p 4567:4567 -it scylladb/scylla-monitoring:riemann-dash
 ```
 
 Then navigate to [http://localhost:4567/](http://localhost:4567/) in your browser. You will find several pre-configured dashboards there.
