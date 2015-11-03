@@ -102,7 +102,8 @@ Tessera graphs are adjusting units on the scale according to the range shown (eg
 
 ## Starting all images at once
 
-To start all containers locally, just run [./start-all.sh](./start-all.sh).
+To start all containers locally, just run [./start-all-local.sh](./start-all-local.sh).
+To start all containers on EC2, use  [./start-all-ec2.sh](./start-all-ec2.sh).
 
 ## Building images
 

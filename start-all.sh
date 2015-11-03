@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+GRAPHITE_IP=$1
+
 echo "Starting metrics-server container..."
 sudo docker run -d \
 	-p 5556:5556 \
@@ -10,7 +12,7 @@ sudo docker run -d \
 echo "Starting tessera container..."
 sudo docker run -d \
 	-p 8081:80 \
-	-e GRAPHITE_URL=http://127.0.0.1:8080 \
+	-e GRAPHITE_URL=http://$GRAPHITE_IP:8080 \
 	-it scylladb/scylla-monitoring:tessera
 
 echo "Starting riemann-dash container..."
