@@ -52,6 +52,42 @@ Examples of aggregated metrics:
 
 Metrics are stored by graphite inside carbon and retained for 1 hour with 1 second precision.
 
+## Collecting system metrics
+
+It is often useful to also monitor utilization of disk, network card, etc. To do so you can start a `collectd` daemon on the machine on which you start Scylla. Here's an example configuration (typically located in `/etc/collectd/collectd.conf`):
+
+```
+LoadPlugin network
+LoadPlugin interface
+LoadPlugin netlink
+LoadPlugin exec
+LoadPlugin disk
+LoadPlugin vmem
+LoadPlugin memory
+LoadPlugin cpu
+
+Interval 1
+
+<Plugin "network">
+    Server "127.0.0.1" "25826"
+</Plugin>
+```
+
+The configuration above will write to collectd inside `metrics-server`. It assumes that it's listening on `127.0.0.1`, so you may have to adjust the address accordingly.
+
+Note: the `netlink` plugin comes from an optional package, you need to install it first. On Fedora that's `yum install collectd-netlink`.
+
+All metrics will be available to your dashboard servers.
+
+Example riemann metrics:
+
+ * `disk-sda/disk_octets/read`
+ * `disk-sda/disk_octets/write`
+ * `netlink-int0/if_octets/rx`
+ * `netlink-int0/if_octets/tx`
+
+Note: Currently the built-in dashboards are configured to show `sda` disk and `int0` NIC, you will have to edit dashboard definitions to show different devices.
+
 # Tessera dashboard
 
 To start it, run:
