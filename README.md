@@ -52,6 +52,12 @@ Examples of aggregated metrics:
 
 Metrics are stored by graphite inside carbon and retained for 1 hour with 1 second precision.
 
+When metric is exported to graphite its name is transformed:
+ * `/` and ` ` is replaced with `.`
+ * host name is prepended and separated with `.`
+
+So `reactor/gauge-load` on localhost becomes `localhost.reactor.gauge-load` in graphite.
+
 ## Collecting system metrics
 
 It is often useful to also monitor utilization of disk, network card, etc. To do so you can start a `collectd` daemon on the machine on which you start Scylla. Here's an example configuration (typically located in `/etc/collectd/collectd.conf`):
