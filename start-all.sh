@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 GRAPHITE_IP=$1
+if [ -z "$1" ]; then
+	echo "Usage: $0 graphite-ip"
+	exit 1
+fi
 
 echo "Starting metrics-server container..."
 sudo docker run -d \
