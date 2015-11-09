@@ -1,8 +1,8 @@
 {
   "category": "",
-  "creation_date": "2015-10-16T10:08:32.781797Z",
+  "creation_date": "2015-11-02T09:07:36.671020Z",
   "definition": {
-    "href": "/api/dashboard/12/definition",
+    "href": "/api/dashboard/13/definition",
     "item_id": "d0",
     "item_type": "dashboard_definition",
     "items": [
@@ -64,6 +64,86 @@
                   }
                 ],
                 "span": 5110
+              },
+              {
+                "item_id": "d56",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d57",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "write.timeouts",
+                    "title": "write timeouts/s"
+                  },
+                  {
+                    "interactive": true,
+                    "item_id": "d58",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "write.foreground",
+                    "title": "foreground writes"
+                  },
+                  {
+                    "interactive": true,
+                    "item_id": "d59",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "write.background",
+                    "title": "background writes"
+                  }
+                ],
+                "span": 12
+              },
+              {
+                "item_id": "d60",
+                "item_type": "cell",
+                "items": [
+                  {
+                    "interactive": true,
+                    "item_id": "d61",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "read.timeouts",
+                    "title": "read timeouts/s"
+                  },
+                  {
+                    "interactive": true,
+                    "item_id": "d62",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "read.foreground",
+                    "title": "foreground reads"
+                  },
+                  {
+                    "interactive": true,
+                    "item_id": "d63",
+                    "item_type": "standard_time_series",
+                    "legend": "",
+                    "options": {
+                      "palette": "tableau20"
+                    },
+                    "query": "read.background",
+                    "title": "background reads"
+                  }
+                ],
+                "span": 12
               },
               {
                 "item_id": "d8",
@@ -542,17 +622,53 @@
         "targets": [
           "aliasByNode(*.lsa.bytes-non_lsa_used_space, 0)"
         ]
+      },
+      "read.background": {
+        "name": "read.background",
+        "targets": [
+          "aliasByNode(*.storage_proxy.queue_length-background.reads, 0)"
+        ]
+      },
+      "read.foreground": {
+        "name": "read.foreground",
+        "targets": [
+          "aliasByNode(*.storage_proxy.queue_length-reads, 0)"
+        ]
+      },
+      "read.timeouts": {
+        "name": "read.timeouts",
+        "targets": [
+          "aliasByNode(*.storage_proxy.total_operations-read.timeouts, 0)"
+        ]
+      },
+      "write.background": {
+        "name": "write.background",
+        "targets": [
+          "aliasByNode(*.storage_proxy.queue_length-background.writes, 0)"
+        ]
+      },
+      "write.foreground": {
+        "name": "write.foreground",
+        "targets": [
+          "aliasByNode(*.storage_proxy.queue_length-writes, 0)"
+        ]
+      },
+      "write.timeouts": {
+        "name": "write.timeouts",
+        "targets": [
+          "aliasByNode(*.storage_proxy.total_operations-write.timeouts, 0)"
+        ]
       }
     }
   },
-  "definition_href": "/api/dashboard/12/definition",
+  "definition_href": "/api/dashboard/13/definition",
   "description": "",
-  "href": "/api/dashboard/12",
-  "id": 12,
+  "href": "/api/dashboard/13",
+  "id": 13,
   "imported_from": null,
-  "last_modified_date": "2015-10-16T17:53:56.465673Z",
+  "last_modified_date": "2015-11-09T13:38:53.341215Z",
   "summary": "",
   "tags": [],
   "title": "scylla",
-  "view_href": "/dashboards/12/scylla"
+  "view_href": "/dashboards/13/scylla"
 }
