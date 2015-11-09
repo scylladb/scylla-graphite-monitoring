@@ -72,6 +72,12 @@ After staring the container, you can navigate to [http://localhost:8081/](http:/
 
 The image is equipped with a pre-configured dashboard for monitoring Scylla: [http://localhost:8081/dashboards/12/scylla](http://localhost:8081/dashboards/12/scylla).
 
+To save dashboard definition to a file after making changes to it, use the RESTful API. For example, to save dashboard with id `13` to `tessera/dashboards/scylla-dashboard.json` run:
+
+```
+curl --get -d 'definition=true' http://127.0.0.1:8081/api/dashboard/13 > tessera/dashboards/scylla-dashboard.json
+```
+
 For more info on using tessera check [here](http://urbanairship.github.io/tessera/docs/).
 
 ## Riemann dashboard
