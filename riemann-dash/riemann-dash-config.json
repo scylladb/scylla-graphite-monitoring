@@ -241,24 +241,24 @@
         "type": "Balloon",
         "weight": 1,
         "id": "e22867639ecd5ab0ec0ff71db3c9dee4255559ac",
-        "version": 68,
+        "version": 73,
         "child": {
           "type": "VStack",
           "weight": 1,
           "id": "3e1fcfca97d283cc913ad0d242e424e6fe795bc2",
-          "version": 68,
+          "version": 73,
           "children": [
             {
               "type": "HStack",
               "weight": 1,
               "id": "a11b94ab9ce259b017b169f55707fc48a7363b60",
-              "version": 68,
+              "version": 73,
               "children": [
                 {
                   "type": "VStack",
                   "weight": 1,
                   "id": "a7433d5b5783f1e62bf871a86d22236ae9d7bb34",
-                  "version": 65,
+                  "version": 70,
                   "children": [
                     {
                       "type": "HStack",
@@ -398,26 +398,46 @@
                       "type": "HStack",
                       "weight": 1,
                       "id": "40d5be802c5f064cc3eab04d6fa37c2117f99a63",
-                      "version": 10,
+                      "version": 15,
                       "children": [
                         {
-                          "type": "Grid",
-                          "weight": 1,
-                          "id": "c5e54adf6cca5344217d2697833d934f43b1ec4f",
-                          "version": 7,
-                          "title": "",
-                          "query": "service = \"lsa/bytes-total_space\" or\r\nservice = \"cache/bytes-total\" or\r\nservice = \"lsa/bytes-non_lsa_used_space\" or\r\nservice = \"transport/total_requests_served\"",
-                          "max": "",
-                          "rows": "service",
-                          "cols": "host",
-                          "row_sort": "lexical",
-                          "col_sort": "lexical"
-                        },
-                        {
-                          "type": "View",
+                          "type": "Flot",
                           "weight": 1,
                           "id": "d77f442e352dc76d13d89bee0abbd24a861e289a",
-                          "version": 0
+                          "version": 2,
+                          "title": "Foreground ops",
+                          "query": "service =~ \"storage_proxy/queue_length-writes\" or\r\nservice =~ \"storage_proxy/queue_length-reads\"",
+                          "min": null,
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "69fbaa0198f28cb23fba93a782054f9b40b4ec96",
+                          "version": 2,
+                          "title": "Background ops",
+                          "query": "service =~ \"storage_proxy/queue_length-background writes\"\r\nor service =~ \"storage_proxy/queue_length-background reads\"",
+                          "min": null,
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
+                        },
+                        {
+                          "type": "Flot",
+                          "weight": 1,
+                          "id": "ae59f51d4f3017e15bf6b67b9a7deff23bf140dc",
+                          "version": 1,
+                          "title": "timeouts",
+                          "query": "service =~ \"storage_proxy/total_operations-write timeouts\" or service =~ \"storage_proxy/total_operations-read timeouts\"",
+                          "min": null,
+                          "max": null,
+                          "timeRange": 1000,
+                          "graphType": "line",
+                          "stackMode": "false"
                         }
                       ]
                     }
@@ -1049,6 +1069,37 @@
         }
       },
       "id": "ba2b942a4542e2e40bf1018b0d9994786c334426"
+    },
+    {
+      "name": "Riemann",
+      "view": {
+        "type": "Balloon",
+        "weight": 1,
+        "id": "4532803094689eddb4664b4928f87c6d92f9b1c5",
+        "version": 2,
+        "child": {
+          "type": "VStack",
+          "weight": 1,
+          "id": "74dd0ed53748ba8acb6009ad26e0e4aea2944268",
+          "version": 2,
+          "children": [
+            {
+              "type": "Flot",
+              "weight": 1,
+              "id": "21400781fb849b74689fb96a4e6537346078aff6",
+              "version": 2,
+              "title": "Riemann",
+              "query": "service =~ \"storage_proxy/%\"",
+              "min": null,
+              "max": null,
+              "timeRange": 300,
+              "graphType": "line",
+              "stackMode": "false"
+            }
+          ]
+        }
+      },
+      "id": "ad87cdc44cc91692d8933bbb50b7526e3dc99538"
     }
   ]
 }
