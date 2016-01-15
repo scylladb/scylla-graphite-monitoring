@@ -15,7 +15,7 @@ To start the container, run:
 sudo docker run -d \
 	-p 5556:5556 \
 	-p 25826:25826/udp \
-	-p 80:80 \
+	-p 8080:80 \
 	-it scylladb/scylla-monitoring:metrics-server
 ```
 
@@ -25,7 +25,7 @@ The following ports are exposed:
  ---- | ----
  5556/tcp | riemann
  25826/udp | collectd
- 80/tcp | graphite web GUI
+ 8080/tcp | graphite web GUI
 
 You can enable Scylla to write metrics to it using command line arguments like this:
 
@@ -101,7 +101,7 @@ To start it, run:
 ```
 sudo docker run -d \
     -p 8081:80 \
-    -e GRAPHITE_URL=http://127.0.0.1:80 \
+    -e GRAPHITE_URL=http://127.0.0.1:8080 \
     -it scylladb/scylla-monitoring:tessera
 ```
 
