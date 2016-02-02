@@ -2,6 +2,6 @@ FROM aalpern/tessera-simple
 
 COPY dashboards dashboards
 
-RUN invoke run & \
+RUN . env/bin/activate && invoke run & \
 	sleep 1 && \
-	inv json.import 'dashboards/*.json'
+	. env/bin/activate && inv json.import 'dashboards/*.json'
