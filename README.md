@@ -74,12 +74,16 @@ LoadPlugin cpu
 
 Interval 1
 
+Hostname n1
+
 <Plugin "network">
-    Server "127.0.0.1" "25826"
+    Listen "127.0.0.1" "25826"
+    Server "$metrics-server-ip" "25826"
+    Forward true
 </Plugin>
 ```
 
-The configuration above will write to collectd inside `metrics-server`. It assumes that it's listening on `127.0.0.1`, so you may have to adjust the address accordingly.
+The configuration above will write to collectd inside `metrics-server`. In place of `$metrics-server-ip` enter the IP on which metrics-server is listening.
 
 Note: the `netlink` plugin comes from an optional package, you need to install it first. On Fedora that's `yum install collectd-netlink`.
 
